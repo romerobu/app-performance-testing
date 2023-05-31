@@ -1,6 +1,6 @@
 app:
   enabled: false
-  appname: app-name-2
+  appname: app-name-6
   namespace: app
   replicas: 1
   image: quay.io/acidonpe/jump-app-back-springboot:monitoring
