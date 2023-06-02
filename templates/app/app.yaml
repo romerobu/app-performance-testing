@@ -3,6 +3,8 @@ kind: Namespace
 apiVersion: v1
 metadata:
   name: {{ $.Values.app.namespace }}
+  labels:
+    uid: {{ $.Values.app.uid }}  
   annotations:
     argocd.argoproj.io/sync-wave: "-5"
 ---
@@ -11,6 +13,8 @@ kind: Route
 metadata:
   name: {{ $.Values.app.routename }}
   namespace: {{ $.Values.app.namespace }}
+  labels:
+    uid: {{ $.Values.app.uid }}   
 spec:
   to:
     kind: Service
@@ -29,6 +33,7 @@ metadata:
   namespace: {{ $.Values.app.namespace }}
   labels:
     app: {{ $.Values.app.appname }}
+    uid: {{ $.Values.app.uid }} 
 spec:
   replicas: {{ $.Values.app.replicas }}
   selector:
@@ -52,6 +57,7 @@ kind: Service
 metadata:
   labels:
     app: {{ $.Values.app.appname }}
+    uid: {{ $.Values.app.uid }} 
   name: {{ $.Values.app.servicename }}
   namespace: {{ $.Values.app.namespace }}
 spec:
@@ -69,6 +75,8 @@ kind: Route
 metadata:
   name: {{ $.Values.app.routename }}
   namespace: {{ $.Values.app.namespace }}
+  labels:
+    uid: {{ $.Values.app.uid }} 
 spec:
   to:
     kind: Service
