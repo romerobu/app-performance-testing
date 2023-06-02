@@ -1,6 +1,6 @@
 app:
   enabled: false
-  appname: app-test-2
+  appname: app-name
   namespace: app
   replicas: 1
   image: quay.io/acidonpe/jump-app-back-springboot:monitoring
@@ -10,4 +10,4 @@ app:
   portname: http-8443
   protocol: TCP
   routename: back-springboot
-  uid: 29902
+  uid: 25414
