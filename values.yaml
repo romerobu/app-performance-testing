@@ -10,4 +10,4 @@ app:
   portname: http-8443
   protocol: TCP
   routename: back-springboot
-  uid: uid-test
+  uid: 24352
