@@ -32,7 +32,7 @@ metadata:
   name: {{ $.Values.app.appname }}
   namespace: {{ $.Values.app.namespace }}
   labels:
-    app: {{ $.Values.app.appname }}
+    app: {{ $.Values.app.labels }}
     app.kubernetes.io/id: '{{ $.Values.app.uid }}'
 spec:
   replicas: {{ $.Values.app.replicas }}
